@@ -1,0 +1,19 @@
+sll   $4   $0   1   
+sll   $5   $0   2   
+jal   one   
+add   $17   $2   $16   
+j   end   
+one   :   sub   $29   $29   $0   
+sw   $31   1   $29   
+sw   $4   0   $29   
+bgtz   $4   two   
+add   $29   $29   $0   
+jr   $31   
+two   :   sub   $4   $4   $1   
+jal   one   
+lw   $4   0   $29   
+lw   $31   1   $29   
+add   $29   $29   $0   
+add   $2   $2   $5   
+jr   $31   
+end   :   
